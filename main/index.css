@@ -1,0 +1,40 @@
+html {
+    scroll-behavior: smooth;
+}
+
+body{
+    background-color: black;
+	font-family: 'Heebo', sans-serif;
+	letter-spacing: 0;
+	opacity: 1;
+	font-size: 1rem;
+}
+
+/* landingpage-css */
+.navbar-toggler:focus, .navbar-toggler:active {
+    outline: none;
+    box-shadow: none;
+}
+
+.nav-bar-text
+{
+    font-family:"Heebo";
+    font-size: 1rem;
+    font-weight: normal; 
+    letter-spacing: 0;
+    opacity: 100%;
+    color: #F9F9F9;
+}
+
+.nav-link {
+	color: white;
+}
+
+.nav-link:hover {
+	color: grey;
+}
+
+.nav-bar-text:hover
+{
+	background-color: black;
+}
