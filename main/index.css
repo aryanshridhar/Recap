@@ -7,10 +7,9 @@ body{
 	font-family: 'Heebo', sans-serif;
 	letter-spacing: 0;
 	opacity: 1;
-	font-size: 1rem;
+    font-size: 1rem;
 }
 
-/* landingpage-css */
 .navbar-toggler:focus, .navbar-toggler:active {
     outline: none;
     box-shadow: none;
@@ -37,4 +36,21 @@ body{
 .nav-bar-text:hover
 {
 	background-color: black;
+}
+
+.landing-image{
+    display: flex;
+    justify-content: flex-end;
+    position: relative;
+    bottom: 3rem;
+}
+
+.url-input{
+    margin-top: 15rem;
+    margin-left: 20%;
+    /* margin-right: 500rem; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
 }
