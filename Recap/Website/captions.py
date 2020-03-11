@@ -1,34 +1,27 @@
-import requests
+from youtube_transcript_api import YouTubeTranscriptApi
+from get_http_timed_text import timedtext_url
 
+def get_timedtext(youtube_url):
+    obj = timedtext_url(youtube_url)
+    timedtext = YouTubeTranscriptApi.get_transcript(obj.get_videoid()[2:]) # get rid of fist two letters
 
-class timedtext_url():
-    def __init__(self, youtube_url):
-        self._youtube_url = youtube_url
-        self._timedtext_url_domain = 'https://www.youtube.com/api/timedtext?'
-        self._video_id = self.get_videoid()
-        self._language = 'lang=en'
-        self._format = 'fmt=srv3'
+    final_str = ' '.join(x['text'].replace('\n', ' ') for x in timedtext)
 
-    def get_videoid(self):
-        video_id = self._youtube_url[self._youtube_url.index('?') + 1 : ]
-
-        return video_id
-
-    def get_timedtext_url(self):
-        return self._timedtext_url_domain + '&'.join([self._video_id, self._language, self._format])
-
-
-
+    return final_str
 
 
 if __name__ == '__main__':
+    try:
+        obj = timedtext_url(input('type youtube url: '))
+    except ValueError:
+        print('Enter the url please !')
+    else:
+        try:
+            timedtext = YouTubeTranscriptApi.get_transcript(obj.get_videoid()[2:]) # get rid of fist two letters
+        except:
+            print('Subtitles are disabled for this video')
+        else:
+            final_str = ' '.join(x['text'].replace('\n', ' ') for x in timedtext)
 
-    foo = timedtext_url('https://www.youtube.com/watch?v=vwFCvSQSsVk')
-    timedtext_url = foo.get_timedtext_url()
-
-    r = requests.get(timedtext_url)
-
-    file = r.text
-
-    print(file)
-    print(timedtext_url)
+            with open('file.txt' , 'w') as f:
+                f.write(str(final_str))
