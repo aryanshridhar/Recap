@@ -9,8 +9,7 @@ def get_timedtext(youtube_url):
 
     return final_str
 
-
-if __name__ == '__main__':
+def maincall():
     try:
         obj = timedtext_url(input('type youtube url: '))
     except ValueError:
@@ -25,3 +24,5 @@ if __name__ == '__main__':
 
             with open('file.txt' , 'w') as f:
                 f.write(str(final_str))
+
+maincall()
