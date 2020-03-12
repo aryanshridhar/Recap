@@ -15,6 +15,7 @@ for key in range(0,len(a),3):
     final = i1 + i2 + i3
     list1.append(final)
     
+final_str = '.'.join(list1)
 
 with open('file.txt' , 'w') as f:
-    f.write(str(list1))
+    f.write(str(final_str))
