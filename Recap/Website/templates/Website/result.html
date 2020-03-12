@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+	<meta charset="UTF-8">
+	<title>Contact Us form</title>
+    <link rel="stylesheet" href="{% static 'Website/cssfile/resultcss.css' %}">
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+    <script src="https://use.fontawesome.com/d1341f9b7a.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Asul&display=swap" rel="stylesheet">
+</head>
+<body>
+	
+<div class="wrapper">
+  <div class="contact-form">
+    <div class="input-fields msg">
+      <p placeholder="Summary!">
+          <h2 class="mb-4" style="color: #fff;">Summary : -</h2><br>
+          <p class="mt-5" style="color: #fff;font-family: Asul;word-spacing: 4px;">{{summary}} .</p>
+      </p>
+    </div>
+    <div class="msg input-fields">
+      <input type="text" class="input" placeholder="Enter keyword">
+      <div class="btn">Search Keyword</div>
+    </div>
+  </div>
+</div>	
+
+
+</body>
+</html>
