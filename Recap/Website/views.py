@@ -4,11 +4,15 @@ from youtube_transcript_api import YouTubeTranscriptApi
 from gensim.summarization import summarize
 import re
 
-def summarize1():
+def summarize1(percent=20):
     f = open('file.txt','r')
     raw = f.read()
     f.close()
-    sumz=summarize(raw,ratio = .3)
+    if '.' in str(percent):
+        percent = float(percent)
+    else:
+        percent = int(percent)
+    sumz=summarize(raw,ratio=percent/100)
 
     return sumz
 
@@ -45,8 +49,12 @@ def homepage(request):
         
     return render(request , 'Website/index.html')
 
-def results(request ,url): 
+def results(request ,url):
+    words = 20
+    if request.method == 'POST':
+        words = request.POST.get('word')
+        print(words)
     geturl(url)
-    summarized = summarize1()
-    context = {'summary' : summarized.replace('\n','').title()}
+    summarized = summarize1(percent=words)
+    context = {'summary' : summarized.replace('\n','').title() , 'url': 'https://www.youtube.com/embed/'+url}
     return render(request , 'Website/result.html' , context)
