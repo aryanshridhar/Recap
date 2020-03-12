@@ -17,4 +17,4 @@ for key in range(0,len(a),3):
     
 
 with open('file.txt' , 'w') as f:
-    f.write(str(final))
+    f.write(str(list1))
