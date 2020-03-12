@@ -56,6 +56,9 @@ body{
     resize: none;
     height: 20rem;
     width: 50rem;
+    border: solid #2CCC93 5px;
+    border-radius: 40px;
+
   }
   .contact-form-btn{
     float: right;
