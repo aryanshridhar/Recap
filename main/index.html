@@ -1,50 +1,35 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-    <link rel="stylesheet" href="index.css">
+	<title>Animated Login Form</title>
+	<link rel="stylesheet" type="text/css" href="index.css">
+	<link href="https://fonts.googleapis.com/css?family=Poppins:600&display=swap" rel="stylesheet">
+	<script src="https://kit.fontawesome.com/a81368914c.js"></script>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
-<body class="container-fluid">
-    <style>
-        body, html {
-        overflow-x: hidden;
-        }
-    </style> 
-    <!-- landing page -->
-    <nav class="navbar navbar-expand-lg fixed-top " id="NavBar_BackgroundColour" >
-        <a class="navbar-brand px-2 py-1" href="#" >
-        <svg width="172" height="59" viewBox="0 0 172 59" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M17.3438 28.4688H8.53125V46H0.625V0.5H16.625C21.875 0.5 25.9271 1.67708 28.7812 4.03125C31.6354 6.38542 33.0625 9.79167 33.0625 14.25C33.0625 17.2917 32.3229 19.8438 30.8438 21.9062C29.3854 23.9479 27.3438 25.5208 24.7188 26.625L34.9375 45.5938V46H26.4688L17.3438 28.4688ZM8.53125 22.125H16.6562C19.3229 22.125 21.4062 21.4583 22.9062 20.125C24.4062 18.7708 25.1562 16.9271 25.1562 14.5938C25.1562 12.1562 24.4583 10.2708 23.0625 8.9375C21.6875 7.60417 19.625 6.91667 16.875 6.875H8.53125V22.125ZM54.7188 46.625C49.9062 46.625 46 45.1146 43 42.0938C40.0208 39.0521 38.5312 35.0104 38.5312 29.9688V29.0312C38.5312 25.6562 39.1771 22.6458 40.4688 20C41.7812 17.3333 43.6146 15.2604 45.9688 13.7812C48.3229 12.3021 50.9479 11.5625 53.8438 11.5625C58.4479 11.5625 62 13.0312 64.5 15.9688C67.0208 18.9062 68.2812 23.0625 68.2812 28.4375V31.5H46.1875C46.4167 34.2917 47.3438 36.5 48.9688 38.125C50.6146 39.75 52.6771 40.5625 55.1562 40.5625C58.6354 40.5625 61.4688 39.1562 63.6562 36.3438L67.75 40.25C66.3958 42.2708 64.5833 43.8438 62.3125 44.9688C60.0625 46.0729 57.5312 46.625 54.7188 46.625ZM53.8125 17.6562C51.7292 17.6562 50.0417 18.3854 48.75 19.8438C47.4792 21.3021 46.6667 23.3333 46.3125 25.9375H60.7812V25.375C60.6146 22.8333 59.9375 20.9167 58.75 19.625C57.5625 18.3125 55.9167 17.6562 53.8125 17.6562Z" fill="#A843FF"/>
-            <path d="M88.0938 40.5625C89.9896 40.5625 91.5625 40.0104 92.8125 38.9062C94.0625 37.8021 94.7292 36.4375 94.8125 34.8125H101.969C101.885 36.9167 101.229 38.8854 100 40.7188C98.7708 42.5312 97.1042 43.9688 95 45.0312C92.8958 46.0938 90.625 46.625 88.1875 46.625C83.4583 46.625 79.7083 45.0938 76.9375 42.0312C74.1667 38.9688 72.7812 34.7396 72.7812 29.3438V28.5625C72.7812 23.4167 74.1562 19.3021 76.9062 16.2188C79.6562 13.1146 83.4062 11.5625 88.1562 11.5625C92.1771 11.5625 95.4479 12.7396 97.9688 15.0938C100.51 17.4271 101.844 20.5 101.969 24.3125H94.8125C94.7292 22.375 94.0625 20.7812 92.8125 19.5312C91.5833 18.2812 90.0104 17.6562 88.0938 17.6562C85.6354 17.6562 83.7396 18.5521 82.4062 20.3438C81.0729 22.1146 80.3958 24.8125 80.375 28.4375V29.6562C80.375 33.3229 81.0312 36.0625 82.3438 37.875C83.6771 39.6667 85.5938 40.5625 88.0938 40.5625ZM127.906 46C127.573 45.3542 127.281 44.3021 127.031 42.8438C124.615 45.3646 121.656 46.625 118.156 46.625C114.76 46.625 111.99 45.6562 109.844 43.7188C107.698 41.7812 106.625 39.3854 106.625 36.5312C106.625 32.9271 107.958 30.1667 110.625 28.25C113.312 26.3125 117.146 25.3438 122.125 25.3438H126.781V23.125C126.781 21.375 126.292 19.9792 125.312 18.9375C124.333 17.875 122.844 17.3438 120.844 17.3438C119.115 17.3438 117.698 17.7812 116.594 18.6562C115.49 19.5104 114.938 20.6042 114.938 21.9375H107.344C107.344 20.0833 107.958 18.3542 109.188 16.75C110.417 15.125 112.083 13.8542 114.188 12.9375C116.312 12.0208 118.677 11.5625 121.281 11.5625C125.24 11.5625 128.396 12.5625 130.75 14.5625C133.104 16.5417 134.312 19.3333 134.375 22.9375V38.1875C134.375 41.2292 134.802 43.6562 135.656 45.4688V46H127.906ZM119.562 40.5312C121.062 40.5312 122.469 40.1667 123.781 39.4375C125.115 38.7083 126.115 37.7292 126.781 36.5V30.125H122.688C119.875 30.125 117.76 30.6146 116.344 31.5938C114.927 32.5729 114.219 33.9583 114.219 35.75C114.219 37.2083 114.698 38.375 115.656 39.25C116.635 40.1042 117.938 40.5312 119.562 40.5312ZM171.938 29.4375C171.938 34.6667 170.75 38.8438 168.375 41.9688C166 45.0729 162.812 46.625 158.812 46.625C155.104 46.625 152.135 45.4062 149.906 42.9688V59H142.312V12.1875H149.312L149.625 15.625C151.854 12.9167 154.885 11.5625 158.719 11.5625C162.844 11.5625 166.073 13.1042 168.406 16.1875C170.76 19.25 171.938 23.5104 171.938 28.9688V29.4375ZM164.375 28.7812C164.375 25.4062 163.698 22.7292 162.344 20.75C161.01 18.7708 159.094 17.7812 156.594 17.7812C153.49 17.7812 151.26 19.0625 149.906 21.625V36.625C151.281 39.25 153.531 40.5625 156.656 40.5625C159.073 40.5625 160.958 39.5938 162.312 37.6562C163.688 35.6979 164.375 32.7396 164.375 28.7812Z" fill="#44A4FD"/>
-        </svg>
-        </a>    
-        <button class="navbar-toggler navbar-dark " type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">      
-            <ul class="nav navbar-nav ml-auto mt-2 mt-lg-0 list-right">
-                <li class="nav-item px-3">
-                    <a id="Active_Home" class="nav-link py-1" href="#">HOME</a>
-                </li>
-                <li class="nav-item px-3 ">
-                    <a class="nav-link py-1" href="#aboutboardsection">ABOUT</a>
-                </li>
-                <li class="nav-item px-3 ">
-                    <a class="nav-link py-1" href="#contactussectionid">CONTACT US</a>
-                </li>
-            </ul>
+<body>
+	<img class="wave" src="../images/wave.png">
+	<div class="container">
+		<div class="img">
+			<img src="../images/bg.svg">
+		</div>
+		<div class="login-content">
+			<form action="index.html">
+				<img src="../images/avatar.svg">
+				<h2 class="title">Welcome</h2>
+           		<div class="input-div one">
+           		   <div class="i">
+           		   		<i class="fas fa-user"></i>
+           		   </div>
+           		   <div class="div">
+           		   		<h5>Enter Yt Video :- </h5>
+           		   		<input type="text" class="input">
+           		   </div>
+           		</div>
+            	<input type="submit" class="btn" value="Proceed">
+            </form>
         </div>
-    </nav>
-    <div class="landing-section">
-        <!-- <form>
-            <input type="text" class="form-control url-input" placeholder="Write your YT url here">
-        </form> -->
-        <div class="landing-image">
-            <img src="../images/landingBck.png">
-        </div>
-</div>
+    </div>
+    <script type="text/javascript" src="main.js"></script>
 </body>
 </html>
