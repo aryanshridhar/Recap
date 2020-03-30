@@ -1,63 +1,264 @@
-Hey, everybody. How's [it] going in this series of videos?We'll be learning how to create and use classes within python and how object-oriented concepts are applied within the language nowThere's a lot to cover when working with classes, so I'm going to break these up into several different videos
-We'll cover the basics of creating and instantiating classes will learn about inheritance class and instance variablesstatic methods and class methods and Several other topicsSo breaking these up in several videos will allow us to focus on specific topics in each video so in this video
-We'll be learning the basics of creating and instantiating simple classes, but firstWhy should we even use classes now this isn't just specific toPython you can see classes being used throughout most modern programming languages, and there's a good reason for that
-they allow us toLogically group our data and functions in a way that's easy to [reuse] and also easy to build upon if need beNow just a quick side note when I say data and functions that are associated with a specific class
-We call those attributes and methods, and you'll hear me use those terms a lot throughout these videos, so when I say methodsI mean a function that is associated with a class[so] let's go ahead and get started so say we had an application for our company
-And we wanted to [represent] our employees and our python code nowThis would be a great use case for a class because each individual employee is going to have specificAttributes and methods so for example each employee is going to have a name and email address [a] pay and also
-Actions that they can perform so it'd be nice if we had a classThat we could use as a blueprint to create each employee so that we didn't have to do this manually each time from scratchSo let's go ahead and create a simple employee class and see what that would look like so to create a class
-It's just as easy as saying class employee nowI'm going to leave this empty for now, and if we just left it like this and we get an errorso if you ever have a class or a function [that] you want to leave empty for the time being then you can simply put
-In a past statement and python will know that you just want to skip that for nowSo now we have a simple employee class with no attributes or methodsAnd I wanted to stop here because I wanted to explain the difference between a class and an instance of a class
-So our class is basically a blueprint for creatingInstances and each unique employee that we create using our employee class will be an instance of that classso for example if I said employee 1 equals employee and
-EmPLoyee 2Equals employee then each of these are [going] to be their own unique instances of the employee classso for example if I go ahead and print both of these out and
-Copy and paste thatThere and you can see that both of these are employee objects, and they're both uniqueThey both have different locations here in memory now
-This is an important distinction because you'll hear me talk a lot aboutinstance variables and class variables and it's important to know the difference between those and I'll go more in depth into class variables in thenext video but for this video
-We're going to be looking at instance variables so instance variables contain Data that is unique to each instanceNow we could manually create instance variables for each employee by doing something like thisSo let's say we wanted employee 1 to have a first name and a last name so I could just do employee 1 not first
-Equals Corey and then I could do employee lastisequal to
-Schaefer and I could also give it an email address, so I'll do employee 1 dot email equalsand I'll just do the first name with the last name atCompany comm and lastly let's go ahead and add a pay [onto] there too, so I'll do employee 1 not pay and we'll just do
-50,000 there now let's give employee toSome of these same attributes so for this one. I'll just do testUser and then I'll do test
-User and I will make that60,000 ok so now each of these instances have attributes that are unique to themso if I print it out, let's say I could print out the employee [1] dot mail and
-Also print out the employee to emailOn it looks like whenever I gave these the instance variablesI forgot to make this employee to here so now let's run that so now you can see that that email
-Was created for each employee?[let's] say that we wanted to set all of this information for each employeeWhen they're created rather than doing all of this manually like we did here
-So we wouldn't want to have toManually set these variables every time you can see it's a lot of code and it's also prone to mistakesJust like I did whenever I forgot to change the [to] employee, [too]
-So we don't get much benefit of using classes if we did it this way, so to make theseSet up automatically when we create the employee we're going to use a special init methodSo now inside of our employee class I'm going to create this special init method
-Now you can think of this method as initialize and if you're coming from another languageThen you can think of this as the constructor now when we create methods within a class they [receive] the instance as the first argumentAutomatically and by convention. We should call the instance self now. You can call it
-Whatever you wantBut it's a good idea to stick to convention here and just use selfSo after self we can specify what other arguments that we want to
-Accept so let's go ahead and accept the first name the [last] name and the pay and I know that we had email, tooBut we can create the email using the first name and the last name so now within our and Knit methodWe're going to set all of these instance variables
-So let's do self dot first equals first and now I'm just going to do this for the rest of them as wellSo [I'm] going to do self dot pay or self dot last and self dot pay and for the emailI can do self dot email equals first plus
-and then we'll put a dot between those and then last and then we'll add on to the end atcompany commOkay, so whenever I say that self is the instance what I mean by [that] is that when we self dot first?
-equals [two] first hereIt's going to be the same thing as us saying down here that employee one dot first equals[Korey] except now instead of doing this manually
-It'll be done automatically when we create our employee objectsNow these don't need to be the same as our arguments so for example. I could make thisSelf dot f name equals first, but I usually like to keep these similar if possible
-So I'm going to go ahead and set that back [to] self dot first equals first, okay?So now when we create our instances of our employee class right here nowwe can pass in the values that we
-specified in our anit method now our net method takes the instance which we call itself and the first name last name andPay as arguments, but when we create our employee down here the instance is passed automaticallySo we can leave off self we only need to provide the names and the pay so we could create these by
-Passing in first and we have to do this in orderSo I will pass in all of the same information that we did manually down there and for the second oneI'll do [test] and
-User and I think I had that at[sixty] [thousand] okayso what would happen on this line when we create this employee the anit method will [be] run automatically, so
-Employee one will be passed in as self and then it will set all [of] these attributesSo it'll set employee one dot first is equal to first which we passed in as quarryEmployee one that last equals what we passed in is last and so on so now that we have that an it method in place
-We can go [ahead] and delete these manual assignments that we made down hereAnd you can see by deleting that that we got rid of a lot of codeSo I'm going to go ahead and comment out those lines
-[we're] printing [the] employees, and I'm just going [to] go ahead and print out the emailSo if I run that then you can see that that still works, okay?So everything that we have so far [like] the names and email and the pay are all attributes of our class now
-Let's say that we wanted the ability to perform some kind of action not to do thatWe can add some methods to our classSo let's say [that] I wanted the ability to display the full name of an employee now
-This is an action that you'd likely need to do a lot with a class like thisSo we can do this manually outside the class if I was to come down here and doPrint and I could get the full name just by putting in two
-placeholders there and doing a format and saying employee one dot first andEmployee one dot last and if I go ahead and print this outAnd you can see that we got the full name there
-But that's a lot to type in each time that you want to display the employees full name, [so] insteadLet's create a method within our class that allows us to put this functionality in one place, so within our class hereI'm going to create a method called full name and we can do that with just doing a death of
-Full name now [like] I said before each method within a classAutomatically takes the instance as the first argumentand
-We're going to always call [that] self and the instance is the only argument that we'll need in order to get the full nameSo within this method hereI'm just going [to] take the same logic that we had down here and cut that out
-and I'm just going to go ahead and return that but we have to be careful here becausenow instead of printing Employee [1][first-name] and [lastname], [I'm] going to use self so that it will work [with] all instances
-So I'm going to do self dot first and self dot lastSo now that we created that method instead of printing like we did before nowI can just come down [here] and do employee 1 dot full name and
-Print that outAnd if I run that then you can see that we got the same [thing] and notice that we need the parentheses hereBecause this is a method instead of an attribute
-So if I left the parentheses off and printed this then you can see that it prints the method instead[of] the return value of themethod so we're going to have to put those parentheses on in order to run that properly so now we have full advantage of
-Code reviews here, so instead of typing this out for each full name that I want to print nowI can just use that method so now if I wanted to print employee two's full nameIt's just as easy as replacing employee one with employee two and running that and we get the correct answer
-Okay, and one more quick thing that I wanted [to] point out hereNow one common mistake that I see when creating methods is forgetting the self argument for the instanceSo let's take a quick look at what that would look like if we left that off
-so now before I run this if I just comment it out this printing of full name down here andRan this then you can see I'm actually going to remove these print statements here as wellNow [you] can see that this runs without any errors
-But if I was to try to run this method that we accidentally left self off of thenRun this and you can see that we get an error and the error that we got was a type errorfull-name takes zero positional arguments
-But one was given now this can be confusing because it doesn't look like we're passing any arguments here into full nameBut the instance which in this case is employee two is getting passed automaticallySo we have to expect that instance argument in our method, and that's why we added self
-so I'm going to come back up [here] to full name andPut self back in and now running this you can see that [it] runsCorrectly now we can also run these methods using the class name
-Itself which makes it a bit more obvious of what's going on in the background because whenever we do that, so I'll do employeeDot full name now [when] we run it from the class we have to manually pass in the instance as an argumentSo in this case
-I'll pass in employee one so you can see how these are similar, but not exactly the sameSo I'm going to put these side-by-side just so that we can compare them hereSo these two lines here do the exact [same] thing, but here when I do employee one
-Which is a instance and I call the method. I don't need to pass in selfIt does it automatically and when we call the method on the classAnd it doesn't know what?
-instance that we want to run that method with so we do have to pass in the instance and that gets passed in asself and if I go [ahead] andPrint this out and run it then you can see that it works
-Just like if we were to print out the employee one dot full nameAnd I wanted to show you that because that's actually what's going on in the backgroundwhen we run employee one dot full name it gets transformed into this here employee dot full name and
-Passes in employee one as self and that's why we have self for these methods, so I hope that makes sense to youThat's not extremely important to know when we're just getting started with working with classesBut we need to understand that [in] later videos once we start inheriting from other classes and things like that
-So I figured it would be a good thing to go ahead, and show you that now okay?So I think that's going to do it for this video in this videoWe learned how to create simple classes the difference between a class and an instance of that class and we also learned how to initialize
-class attributes and create methods nowWe still have a lot to cover in future videos, and we'll be going over more advanced topics, so in the next videoWe'll learn about class variables, and how they differ from instance variables that we saw here
-But if you do have any [questions] with what we covered in this videoThen feel free to ask in the comment section [below] and I'll do my best to answer thoseIf you enjoy these tutorials and would like to support them then there are several ways you can do that
-The easiest way is to simply like the video and give it a thumbs up and alsoit's a huge help to share these videos withAnyone who you [think] would find them useful and if you have the means you can contribute through patreon
-And there's a link to that page in [its] scription section below be sure to subscribe for future videos and thank you all for [watching]it's a huge help to share these videos withAnyone who you [think] would find them useful and if you have the means you can contribute through patreon
+hey there how's it going everybody inthis video we're gonna be learning howto handle missing values and also how to
+clean up our data a bitnow almost every dataset that you'regoing to be working with is likely going
+to have some missing data or data thatwe'd like to clean up or convert to adifferent data type so we'll learn how
+to do all of that here now towards theend of the video we'll combine what welearned here to be able to look at our
+Stack Overflow survey data and calculatethe average years of experiences ofdevelopers who answered the survey so be
+sure to stay around for that and it'sgoing to be great practice for what welearned here now I would like to mention
+that we do have a sponsor for thisseries of videos and that is brilliantso I really want to thank brilliant for
+sponsoring the series and it would begreat if you all can check them outusing the link in the description
+section below and support the sponsorsand I'll talk more about their servicesin just a bit
+so with that said let's go ahead and getstarted ok so first let's talk about howto drop missing values so I have my
+snippets file open here and we've seenthis in previous videos and again ifanyone wants to follow along then I'll
+have a link to all of these notebooksand the data in the description sectionbelow and as we've seen in previous
+videos we'll learn how to do some ofthis and our smaller snippets data framefirst and then we'll see how to do some
+interesting stuff on our larger StackOverflow data set to get this working onsome real world data so for this video
+I've added some null values here intoour snippets data frame that we didn'thave before so I added some extra first
+names here and we can see that I justhave one that is a numpy dot n a n whichis a not a number value I also imported
+numpy up here at the top this and thisone here is just a none value and then Ialso have some custom missing values as
+well this one is just a string of n aand this one is just a string of missingso I'll have some NA ends some nuns and
+stuff like that thrown throughout thisdata so that we have some missing valuesso you're gonna see this a lot that when
+we work with pandas we're going to havesome missing data and depending on whatit is you're trying to do you might want
+to handle this in different ways so onething you might want to do with missingdata is to simply remove it so for our
+small data frame here let's say thatwe're going todo some analysis with these people in
+the data frame but if they don't havetheir first name last name and emailaddress then we can't do what we're
+trying to do so we'll just remove therows that don't have those values so inorder to do this we can use the drop in
+a method so let's do this and then I'llexplain the results and go over those soall I'm going to do down here with my
+data frame is I'm going to say DF dropin a and we're gonna run that withoutany arguments right now so when we run
+this we can see that now we only getfour rows of data here and up here wehad let's see four five six seven so we
+got these four rows here because theydidn't have any missing values now we dostill have our bottom row here which has
+some of our custom missing values butwe'll see how to deal with these in justa second but for now let's go over what
+drop n/a is actually doing here nowwhat's going on in the background isthat drop in a is using some default
+arguments so I'm going to manually feelin these default arguments and it mightmake more sense why we got this specific
+result so by default I'll leave that onehere and now I'm going to fill in dropin a again but I'm gonna put the default
+arguments that it already has and thedefault arguments of what this is doingin the background is it has an axis set
+to index and it has a Hal variable setto any so since this is what the methodwas using by default anyway we should
+just go ahead and get the same resultshere and we can see that we do we getthe same results as we did when we ran
+this up here but now let me actuallyexplain these arguments here so first wehave the axis argument so this can
+either be set to index or set to columnsthat is going to tell pandas that wewant to drop in a values when our rows
+are missing values when it's set here toindex if we set this to columns then itwould instead drop columns if they had
+missing values and we'll look at that injust a secondnow the second argument here is how we
+want to drop these or I guess a betterway to frame that is this is thecriteria that it uses for dropping a row
+or a column soby default this is set to any so we'relooking over our rows since this is set
+to index and this is set to any here soit will drop rows with any missingvalues but this might not be what you
+want maybe with this kind of an analysisthat we're doing it's okay to have youknow missing email or last name or
+something like that but there just hasto be something it can't just be anentire row of missing values so if
+that's the case then we can insteadchange this how argument to all and thiswill then only drop rows when all of the
+values in that row are missing so now ifI run this then we can see that now weget back more rows than we did before
+because it kept the rows that had somemissing values but not all missingvalues so we can see here we have an
+email missing but there were some othercolumns filled in and we can see thateverything was missing here but they did
+have an email so all of the values haveto be missing in order for this toactually drop those so it looks like we
+are missing index of four if I go up toa my original data frame here we can seethat that index had all missing values
+there okay now if I instead change thisaxis to columns instead of index then itwill drop columns that have all missing
+values we don't have any columns thathave missing values all the way down soit should just return our original data
+frame so if I say columns here and runthis then we can see that that's what weget because none of these columns have
+missing values all the way down now if Iset this back to the default and dropcolumns with any missing values then
+we'll actually get an empty data framereturn because we have one row that iscompletely empty that we saw here this
+index of four so for that row eachcolumn is going to have at least onemissing value and if we set this to any
+than any column which is even a singlemissing value will be dropped which inthis case is all of them so if I change
+this to any then since we have allmissing valueusing one of these rows that's just
+going to give us an empty data frame nowat this point you might be wonderingokay well my data is a bit more
+complicated than this and I'm doing someinternet analysis where I want to dropsome missing values but I only want to
+drop rows that are missing values in aspecific column so for example let's saythat we're doing some analysis on our
+data and it's fine if they don't have afirst name or a last name but we reallyneed the email address and if they don't
+have an email address then we need tojust drop those rows so in order to dothis we can pass in a sub set argument
+so first I'm gonna set our access hereback to index so that we're droppingrows and now we want to pass in a sub
+set argument and this subset will be thecolumn names that were checking formissing values so in this case it's just
+going to be a single column so I'm gonnasay sub set is equal to and I'm stillgoing to pass in a list even though this
+is just a single column and I'll sayemail so if I run this then we can seethat the data frame that we get back is
+full of rows that have at least theiremail address filled in and again thisone down here with these n/a values that
+is our custom missing values and I'llshow you how to treat those as missingvalues in just a bit now in this case
+here since we're only passing in asingle column for our sub set our howargument here isn't really doing much
+because it's only going to look at theemail address for missing values so ifan email address isn't filled in then
+passing in either any or all for ourargument here would trigger that row tobe removed so even if I put this as all
+it should give us the same resultbecause we're only checking one valuebut we can also pass in multiple columns
+to our subsets so what if we said okaywell in order for my data to be usefulI need either their last name or their
+email address but I don't need both soin order to do this we could just sayokay they need all of the values in last
+name and an email orsorry there that I got that reversedthey don't need their last name in the
+email it just can't be that all of thosevalues are missing so as long as thelast name or the email is there then it
+shouldn't drop those rows so if I runthis then we can see that we get somevalues that don't have an email but they
+did have a last nameand also we would get back some valuesthat didn't have a last name but do have
+an email just like this anonymous onehere it has an email but it doesn't havea last name and again that's because we
+passed in all for our Hal argument whichmeans for a row to be dropped both ofthe subsets columns needed to be missing
+now like we've seen in previous videosthis isn't permanently changing our dataframe values if we want to permanently
+change our data frame then we'd have toadd the in place argument and set thatequal to true here within this method
+but we've seen that a bunch throughoutthe series so far so I don't think I'llgo over that again here okay so now
+let's get to these custom missing valueswe can see down here that we have a rowhere that has some customized missing
+values so for example maybe the peoplewho got our data from I didn't know whatto do with missing values so instead
+they just passed in a string of n/a orthey passed in you know a string ofmissing like we have here so how would
+we actually handle these well it dependson how we load in our data in this casewe've created our data frame from
+scratch by creating a dictionary andthen creating our data frame here sowhat we can do here is just simply
+replace those values with an N a n valuenow if we instead load it in our datafrom a CSV file then we could do
+something different but first I'll showthis and then we'll take a look at theCSV file later whenever I go over to the
+stack overflow data so right here at thetop where we created our data frame I'mgoing to replace these values with a
+proper numpy n a n value so to do thisI'm just going to go a couple lines downhere and we've seen this in previous
+videos but we can use this replace hereand I'm replacing all the values in theentire data frame so anytime we see a
+string of n/aI'm going to replace that with numpy dotna in and again I am importing numpy up
+here as MP so that's where I'm gettingI'm able to use numpy and then I want tosay in place equal to true because we
+actually want to modify that data frameso if I run that then that would replacethose values but I'm also going to place
+replace this string of missing as wellwith MP dot na n values and I want to dothat in place as well so let's go ahead
+and run this that should replace thosevalues and now if I look at our dataframe here then we can see that we no
+longer have that string of missing or nathese are now all na n values and now ifwe go back through and we run ourselves
+where we dropped in a values then thesecustom values should have been replacedand it should treat those as missing
+values so right here we can see what ourprevious result was where we got thisindex of 6 with those custom values if I
+rerun this now we can see that that'sgone and the same with here if I rerunthis then that is gone as well now if
+you don't actually want to make anychanges and we just want to see ifcertain values would or wouldn't be
+treated as n/a values then we could justrun the n/a or is in a method and get amask of values as to whether or not
+these classify as n/a or not so let mejust show you what I mean hereso I could say DF dot is n/a and this is
+just going to give us a mask here ofvalues that are whether or not they areclassified as an n/a value so we can see
+that our row for here was all n/a valuesand so same thing with our row 6 and wecan see some other missing values
+throughout here as well now sometimesespecially when we're working withnumerical data we might want to feel our
+NA values with a particular value nowI'm working with string data here butsometimes it make might make sense to
+fill your n/a values with certain valueswith these as wellso for example let's assume that we were
+calculating grades for assignments orsomelike that and you had some assignments
+that were in a because the student neverturned in the assignment well at thatpoint you could just decide if you
+wanted to score all missing assignmentsas zeros so that you could probablycalculate up the grades so to do
+something like this we can use the fillin a method so for example I could saysomething like this if I do a DFS fill
+in a and then pass in a value just toshow you exactly what this is doing I'mgoing to fill all of our missing values
+with this capitalized missing stringhere and if I run this then we can seethat all of those missing or all of
+those n/a values were filled with thisstring capitalized as missing now like Isaid before I don't do this a lot with
+certain strings I found this to be mostuseful for numerical data depending onhow you're doing your calculations but
+you might want to give n/a values avalue of zero or negative one orsomething like that
+so if it would make sense with your dataand you had numerical data to replaceyour missing values with a zero then you
+could just run DF dot fill in a zero andif I go ahead and run this then we cansee that that works on our data frame as
+well and again just like with our othermethods if you want those changes toyour data frame to be permanent and
+carry over into other cells then simplyjust add that in place argument and setthat to true to make that change
+permanent okay so now let's look atanother common thing that we're likelygoing to need to do with a lot of our
+data and that is casting data types so Ihave another column and my snippets herethat I didn't have in previous videos
+and I have up here if we look this isthis age column so let's say that wewanted to get the average age of all the
+people in this sample data frame wellright now these might look like numberswhen we print them out in our data frame
+down here bTW these are actually stringsand we can see this if we look at ourdata frame data types so to do this we
+can say D F dot d types and that's not amethod it's just an attribute so if Irun this here then we can see that it
+says all ofthese columns are objects and when itsays it's an object it likely means it's
+a string or a mix of different things soin the latest version of Python orpandas I'm sorry
+they actually updated it so that there'sactually a string datatype now but I'lldo a video on those pandas version
+updates at the end of this series sincethey actually released that updatedversion as I was writing this course but
+don't worry there's not a lot that'schanged to where what you learn herewill be outdated or anything like that
+it's still mostly the same but we cansee here that our age column is a stringbecause it's this object data type so if
+we wanted the average age then itwouldn't work as it is now so let's justsee what this error looks like so I'm
+going to grab the mean of that agecolumn and if I run this then we can seethat right now we get an error and if I
+scroll down to see what this air was itsays can only concatenate STR not int tostring now that might not be the most
+easy to understand air right there butbasically it's telling us that becausethat column is strings and not integers
+so we need to convert that column tonumbers instead of a string now there'sa caveat when doing this and this might
+throw some people off so when we have nan values in a column that we're tryingto convert to numbers then you need to
+use the float datatype and that'sbecause the na n value is actually afloat under the hood let me go ahead and
+show this just to show you what thislooks like so I'm gonna look up the typeof n P na in and we can see that that is
+a float so if we try to convert thiscolumn to integers then it's going tothrow an error when it runs into those
+na n values because it can't convertthose so if I was to say D F and of ageis equal to and now let's try to convert
+these to integers so the way that youcast datatypes here is we can just sayokay
+I want the age column as type and now wewant to pass in the type that we want ifI try to convert these
+two integers then this is going to giveus an error because we have some na nvalues so we can see here int argument
+must be a stringnot none type so when you're trying toconvert these two numbers and you have
+those na and values you basically havetwo options here if your column didn'thave any missing values then this would
+just work fine we wouldn't even run intothis error but if it does have missingvalues then you can either convert those
+missing values to something else like azero using the fill and a method that wesaw before or you can just cast that
+column to a float instead now I thinkthis would be a bad idea to convertthose missing values to a zero or some
+other number because we're trying tocompute the average in this case butdepending on your data that might be
+what you want to do but I'm going to goahead and just convert these two floatsso those na n values stay missing values
+so instead of an int here I'm just goingto convert this to a float and if I runthis then that seemed to have work so
+now we can look at the datatypes againso I'll say DF woops sorry I wasn'ttyping in that cell I can say D F dot d
+types and if we look at this then we cansee that now our age is a float objecthere so now let's see what happens when
+we try to take the average of thatcolumn so I'll say D F dot mean and if Irun that then we can see that we get the
+average value for those ages now if youhave an entire data frame of numbers orsomething like that that you're trying
+to convert all at once then the dataframe object has an as type method aswell so you could just say D F dot as
+type and then pass in whatever data typeyou're trying to cast everything to andjust convert everything in the data
+frame at once but we have some mixedcolumns here so we don't want to do thatokay so we've been looking at our small
+data set right now to test this stuffout but now let's take what we learnedhere and learn how this applies to
+real-world data and do some analysis onour Stack Overflow survey data okay sofirst of all I mentioned earlier that if
+we had custom values for missing datathenit's a little bit easier to handle these
+when loading in a CSV and what I'mtalking about up here is up here at thetop where we replaced these custom
+missing values let me show you how wewould do this same thing but loading ina CSV instead so I'm going to switch
+over here to my stack overflow surveydata let me go ahead and rerun this justto make sure that all of this stuff is
+running okay so this notebooks stillrunning that's good and again this isthat stack overflow data that we have
+been using throughout the series and ifyou'd like to follow along then I dohave a download link for this in the
+description section below okay so if Iwanted to ignore those custom valueswhen loading in a CSV then we can simply
+pass in an argument of a list of valuesthat we want to be treated as missing sohere's how we would do this if we had
+some custom missing values here in thisCSV file then I could simply create alist here of those missing values and I
+will just call this n/a valves and nowI'll pass in a list of those so let'ssay that we have some values that are a
+string of n/a and a string of missing sonow what we could do here is just add inan argument and say na values is equal
+to and then that list that we justcreated and if we run that then weshouldn't get any errors and when it
+reads in that CSV then it will treatthat list of values as missing valuesand give them an n/a in result now in
+this survey here they did a good job ofnot having any weird occurrences likethat so that actually shouldn't change
+anything okay so now let's look at aninteresting problem with casting somevalues so let's say that for the
+developers who answered this survey wewanted to calculate the average numberof years of coding experience among all
+of them now that might be a good thingto know to compare your experienceagainst the average but let's look at
+what this or why this might be difficultto calculate with this data set and uscalculating this solution is actually
+going to apply several conceptsthat we've learned through so farthroughout this series so the column to
+view the answer for this question in thesurvey is called years code so let'slook at some of these answers so I'm
+just going to look at the top tenanswers for years code so I will do adot head and let's look at the top ten
+so if I run this then at first glancethis doesn't really look like it'll be aproblem we just have a bunch of integers
+and the number of years that differentrespondents have been coding so youmight think that we can just grab the
+mean by of this column simply by sayingokay if we just have a bunch of integershere and some na n values that's fine
+let's just grab the mean of that columnbut if I run this then we get an errorand if I scroll down here then it says
+can only concatenate string to stringand we saw the same error in our smallerdata set where the column was actually
+being loaded in as a string instead ofnumerical data and we should know how tohandle this by now since we did it in
+the smaller data set so let's try thatso let's try to convert this to floatsand then take the average so let me go
+back up here to the top where we ranthis and instead of running the meanhere I'm going to say okay well let's
+convert this to a float so that we cangrab that average so I will say as typeand we want to convert this to a float
+since there are n a n values so if I runthis then we still get an error so wedidn't get an error in our smaller data
+set here so if I scroll down then itsays could not convert string to floatand the string that it couldn't convert
+was less than one year so this might besomething that we didn't expect here soobviously we don't just have numbers and
+na n values in this column there isactually a string value that respondentscould select that is equal to this
+string of less than one year for codingexperience so let's look at all theunique values of this column so that we
+can see exactly what's in here in casethere are more strings like thisand I don't believe we've actually seen
+this in the series yet maybe we have Ican't really remember but if we want toview unique values of a series then we
+can simply use the unique method so wecould also use the value counts methodthat we've seen several times before if
+we want to count all the unique valuesbut we don't really want to count themwe just want to see all the unique
+values in this column so to do this I'mgonna say DF and then access that year'scode column dot unique dot unique that
+is a method so if I run this whoops andI spelled this wrong sorry having a hardtime typing today okay so if I run this
+then this gives us all the unique valuesof that column and as we'd expect thereare a lot of numbers but we see that we
+also have some strings that are mixedthroughout these numbers now we alsohave na n values here but we're not
+going to worry about those we just wantto ignore the na n values because that'sjust people who didn't answer the
+question but we can see that the stringsthat we have throughout here are lessthan one year and more than 50 years of
+coding experience okay so those are ouronly string values so I'm going toreplace those with numbers so that we
+can get an idea of the average yearspeople have been coding so let's goahead and replace less than one year
+here with a zero since that's basicallythe same thing if somebody's been codingfor less than a year then they've been
+coding for basically zero years so to dothis I can say D F dot years code andaccess that column and then we can just
+replace that value of less than one yearand let's replace that with a zero andwe also want these to be in place equal
+to true because we actually want tomodify that data frame so if I run thatthen it should make that replacement and
+now I'm also going to replace the valuefor more than 50 years here and this isgoing to rescue our results a bit
+depending on how we want tothis I'm simply going to replace thiswith the value of 51 there may be some
+people who have several more more yearsof coding experience than 51 years but Ican't imagine that it would be that many
+people who have you know coded manyyears greater than 50 so I'm gonna justgonna fill this in with 51 but like I
+said depending on what we pick hereit could affect our results slightly butnot by a lot in this case so I'm just
+going to grab this same replace valuehere and instead I want to replace morethan 50 years and I'm gonna replace that
+with a value of 51 so now let me goahead and run this and if we want tolook at these unique values again then
+we could look at these and now itdoesn't look like we have any strings inhere but we can see here that this is
+still a D type of object which meansthat it's not actually reading this inas floats so if we scroll back up here a
+bit Oh actually I think I over wrotethat line yes I did so let's just trythat again so what I want to do here is
+I want to convert this to a float andthis is what gave us an error beforebecause we had these strings in here and
+it didn't know how to convert these to afloat but now we should just be able tosee say okay I want to convert that as
+type set that to a float so let's runthat and we didn't get an error thistime so that's good and now we should be
+able to view the average numbers of ouraverage number of years of codingexperience of the developers who filled
+out this survey so to do this I'm justgonna say okay the data frame accessthat column grab the mean of that column
+so if I run this then we can see thatnow we get that average back so theaverage that we got here was about 11
+and a half years of coding experience asthe average years for developers whoanswered this survey and now you can do
+other analysis on this as well so forexample if we wanted to see the medianthen I could run that and the median
+comes back as nine years of codeexperience so hopefully that real-worldexample helped explain why it's
+important to know how to cast thesevalues and understand what's going onthere there's always going to be data
+that is messy or not in the format thatwe want it in so knowing how to handlethese missing values and cast these
+values to different data types is reallygoing to be essential when working withpandas okay so before we end here I'd
+like to thank the sponsor of this videoand mentioned why I really enjoy theirtutorials and that is brilliant so in
+this series we've been learning aboutpandas and how to analyze data andpython and brilliant would be an
+excellent way to supplement what youlearn here with their hands-on coursesthey have some excellent courses and
+lessons that do a deep dive on how tothink about and analyze data correctlyfor data analysis fundamentals I would
+really recommend checking out theirstatistics course which shows you how toanalyze graphs and determine
+significance in the data and I wouldalso recommend their machine learningcourse which takes data analysis to a
+new level well you'll learn about thetechniques being used that allowmachines to make decisions where there's
+just too many variables for a human toconsider so to support my channel andlearn more about brilliant you can go to
+brilliant org Forge slash CMS to sign upfor free and also the first 200 peoplethey go to that link will get 20% off
+the annual premium subscription and youcan find that link in the descriptionsection below
+again that's brilliant org forge slashCMS ok so I think that's going to do itfor this pandas video I hope you feel
+like you got a good idea for how tohandle these missing values and cast ourdata to different data types so that we
+can do exactly what we want to do interms of analyzing our data now in thenext video we're going to be learning
+how to work with dates and time seriesdata now I've been using the StackOverflow survey data for this entire
+series because I love being able to showyou all real world examples of how theseconcepts apply but our Stack Overflow
+survey data doesn't have any time seriesdata that we can actually work with soI'm going to be using a different data
+set for the next video and I stillhaven't narrowed down exactly what I'llbe using but I'll be sure that it allows
+us to do some analysis on some realworld data like we've been doing somaybe we'll use time series data to
+you know analyze cryptocurrency ratesover time or something like that but ifanyone has any questions about what we
+covered in this video then feel free toask in the comment section below andI'll do my best to answer those and if
+you enjoy these tutorials and would liketo support them then there are severalways you can do that the easiest ways to
+simply LIKE the video and give it athumbs up and also it's a huge help toshare these videos with anyone who you
+think would find them useful and if youhave the means you can contributethrough patreon and there's a link to
+that page in a description section belowbe sure to subscribe for future videosand thank you all for watching
+yoube sure to subscribe for future videosand thank you all for watching

@@ -12,6 +12,11 @@ button.f{
     border-radius: 20px !important;
     font-weight: 900;
 }
+button.b{
+  background-color:ghostwhite;
+  border-radius: 10px;
+  font-size: 20px;
+}
 .hvr-float-shadow {
     display: inline-block;
     vertical-align: middle;
@@ -92,10 +97,6 @@ button.f{
     -webkit-transform: scaleX(1);
     transform: scaleX(1);
   }
-  button.b{
-    background: none;
-  }
-
   h5.todo{
     font-weight: 900;
     font-size: 30px;
