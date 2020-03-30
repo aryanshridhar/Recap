@@ -56,7 +56,6 @@ def results(request ,url):
     words = 20
     if request.method == 'POST':
         words = request.POST.get('word')
-        print(words)
     geturl(url)
     summarized = summarize1(percent=words)
     context = {'summary' : summarized.replace('\n','').title() , 'url': 'https://www.youtube.com/embed/'+url}

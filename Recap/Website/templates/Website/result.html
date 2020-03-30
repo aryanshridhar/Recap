@@ -52,6 +52,9 @@
             <div class="row">
                 <div class="col-xl-8 col-lg-12 order-xl-1 order-2">
                     <div class="card" style="width: auto;">
+                      <div class="embed-responsive embed-responsive-16by9">
+                        <iframe class="embed-responsive-item" src="{{url}}"  width="200" height="200" allowfullscreen></iframe>
+                      </div>
                         <div class="card-body">
                           <h5 class="card-title todo">Summary :-</h5>
                           <hr>
@@ -62,6 +65,7 @@
                         </div>
                       </div>
                 </div>
+
                 <div class="col-xl-4 col-lg-6 col-md-6 col-12 mb-4 order-xl-2 order-1">
                     <form method="POST">
                         {% csrf_token %}
