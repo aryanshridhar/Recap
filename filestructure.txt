@@ -1,0 +1,98 @@
+.
+├── filestructure.txt
+├── Front-End
+│   ├── images
+│   │   ├── avatar.svg
+│   │   ├── bg.svg
+│   │   ├── card1.png
+│   │   ├── card2.png
+│   │   ├── card3.png
+│   │   ├── landingBck.png
+│   │   ├── loading.png
+│   │   ├── pngfuel.png
+│   │   └── wave.png
+│   ├── login
+│   │   ├── login.css
+│   │   └── login.html
+│   ├── main
+│   │   ├── index.css
+│   │   ├── index.html
+│   │   └── main.js
+│   ├── README.md
+│   ├── result
+│   │   ├── result.css
+│   │   └── result.html
+│   └── signup
+│       ├── signup.css
+│       └── signup.html
+├── LICENSE
+├── ml
+│   ├── keywordextract.ipynb
+│   ├── Untitled1.ipynb
+│   └── Untitled.ipynb
+├── README.md
+└── Recap
+    ├── db.sqlite3
+    ├── file.txt
+    ├── manage.py
+    ├── Procfile
+    ├── Recap
+    │   ├── __init__.py
+    │   ├── __pycache__
+    │   │   ├── __init__.cpython-37.pyc
+    │   │   ├── settings.cpython-37.pyc
+    │   │   ├── urls.cpython-37.pyc
+    │   │   └── wsgi.cpython-37.pyc
+    │   ├── settings.py
+    │   ├── urls.py
+    │   └── wsgi.py
+    ├── requirements.txt
+    └── Website
+        ├── admin.py
+        ├── apps.py
+        ├── file.txt
+        ├── __init__.py
+        ├── migrations
+        │   ├── __init__.py
+        │   └── __pycache__
+        │       └── __init__.cpython-37.pyc
+        ├── ml.py
+        ├── models.py
+        ├── __pycache__
+        │   ├── admin.cpython-37.pyc
+        │   ├── apps.cpython-37.pyc
+        │   ├── get_http_timed_text.cpython-37.pyc
+        │   ├── __init__.cpython-37.pyc
+        │   ├── ml.cpython-37.pyc
+        │   ├── models.cpython-37.pyc
+        │   ├── summarize1.cpython-37.pyc
+        │   ├── summarize.cpython-37.pyc
+        │   ├── urls.cpython-37.pyc
+        │   └── views.cpython-37.pyc
+        ├── static
+        │   └── Website
+        │       ├── cssfile
+        │       │   ├── 404wrong.css
+        │       │   ├── indexcss.css
+        │       │   └── resultcss.css
+        │       ├── images
+        │       │   ├── avatar.svg
+        │       │   ├── bg.jpg
+        │       │   ├── bg.svg
+        │       │   ├── RC.svg
+        │       │   ├── RECAP1.svg
+        │       │   ├── wave.png
+        │       │   └── yt.png
+        │       └── jsfile
+        │           └── main.js
+        ├── templates
+        │   └── Website
+        │       ├── 404.html
+        │       ├── 404wrong.html
+        │       ├── index.html
+        │       └── result.html
+        ├── tests.py
+        ├── urls.py
+        └── views.py
+
+21 directories, 74 files
